@@ -4,7 +4,7 @@ export interface Message extends Document {
   content: string;
   createdAt: Date;
 }
-
+// message schema
 const MessageSchema: Schema<Message> = new Schema({
   content: {
     type: String,
@@ -26,6 +26,7 @@ export interface User extends Document {
   isAcceptingMessage: boolean;
   message: Message[];
 }
+// user schema
 const UserSchema: Schema<User> = new Schema({
   username: {
     type: String,
