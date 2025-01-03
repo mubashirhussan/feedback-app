@@ -1,6 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-
 // message interface
 export interface Message extends Document {
   content: string;
@@ -27,7 +26,7 @@ export interface User extends Document {
   verifyCodeExpiry: Date;
   isVerified: boolean;
   isAcceptingMessage: boolean;
-  message: Message[];
+  messages: Message[];
 }
 // user schema
 const UserSchema: Schema<User> = new Schema({
@@ -63,7 +62,7 @@ const UserSchema: Schema<User> = new Schema({
     type: Boolean,
     default: true,
   },
-  message: [MessageSchema],
+  messages: [MessageSchema],
 });
 const UserModel =
   (mongoose.models.User as mongoose.Model<User>) ||
